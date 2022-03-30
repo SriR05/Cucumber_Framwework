@@ -18,12 +18,9 @@ glue="stepDefinitions",
 dryRun=false,monochrome=false,plugin="pretty")
 public class AdactinRunner {
 	public static WebDriver driver;
-	@BeforeClass
+	@BeforeClass()
 	public static void setUp() throws IOException {
 		String browser = Adactin_FileReaderManager.getInstance().getAcrInstance().getBrowser();
-		driver = Cucumber_Base.getBrowser(browser);
-	}
-	}
+		driver = Cucumber_Base.getBrowser(browser);}}
 	
-
 

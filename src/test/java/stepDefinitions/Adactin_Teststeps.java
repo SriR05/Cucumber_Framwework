@@ -1,9 +1,7 @@
 package stepDefinitions;
 
 import java.time.Duration;
-
 import org.junit.Assert;
-
 import Cucumber.Cucumber_Framwork.Cucumber_Base;
 import helperPackage.Adactin_FileReaderManager;
 import helperPackage.Adactin_PageObjManager;
@@ -20,8 +18,7 @@ public class Adactin_Teststeps extends Cucumber_Base {
 		getUrl(Adactin_FileReaderManager.getInstance().getAcrInstance().getUrl());
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-	}
-
+		}
 	@When("User entre Username in Username fied")
 	public void user_entre_username_in_username_fied() throws Throwable {
 		inputElements(pOM.getLogin().getUsrN(),Adactin_FileReaderManager.getInstance().getAcrInstance().userName());
@@ -66,8 +63,9 @@ public class Adactin_Teststeps extends Cucumber_Base {
 		if(expected==actual) {
 			System.out.println("equal");
 		}
-		
+   
 	}
+	
 	@Then("User enter the search button")
 	public void user_enter_the_search_button() {
 		click(pOM.getSearch().getSubBtn());
@@ -108,7 +106,7 @@ public class Adactin_Teststeps extends Cucumber_Base {
 	}
 	@Then("shown the hotel booked information")
 	public void shown_the_hotel_booked_information()throws Throwable {
-		screenS(pOM.getBook().getScreenShot1());
+//		(pOM.getBook().getScreenShot1());
 	}
 	@When("User clicks on the Logout icon provided on the right top corner in blue colour")
 	public void user_clicks_on_the_logout_icon_provided_on_the_right_top_corner_in_blue_colour()throws Throwable {

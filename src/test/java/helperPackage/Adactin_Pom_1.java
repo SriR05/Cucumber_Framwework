@@ -29,7 +29,7 @@ public class Adactin_Pom_1 {
 	private WebElement login;
 	
 	public Adactin_Pom_1(WebDriver driver1) {
-	this.driver	 = driver1;
+	Adactin_Pom_1.driver	 = driver1;
 	PageFactory.initElements(driver1,this);
 	
 	

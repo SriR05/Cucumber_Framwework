@@ -22,10 +22,11 @@ public class Cucumber_Base {
 	public static WebDriver driver;
 
 	public static WebDriver getBrowser(String VMname) {
-         VMname.equalsIgnoreCase("chrome");
+		VMname.equalsIgnoreCase("chrome");
 		System.setProperty("webdriver.chrome.driver", "/Users/srilakshmi/Downloads/chromedriver");
 		System.getProperty("use.di");
 		driver = new ChromeDriver();
+
 
 		return driver;
 
@@ -186,7 +187,8 @@ public class Cucumber_Base {
 
 	}
 
-	public static void alertGetText() {
+	public static void alertGet
+	() {
 		try {
 			String alertText = driver.switchTo().alert().getText();
 			System.out.println("Display text   :" + alertText);
@@ -370,7 +372,7 @@ public class Cucumber_Base {
 
 	public static void click(WebElement element) {
 		try {
-		element.click();
+			element.click();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -389,67 +391,67 @@ public class Cucumber_Base {
 	public static void inputElements(WebElement element,String value) {
 		try {
 			element.sendKeys(value);
-//			element.findElement(By.className(value));
-//			element.findElement(By.id(value));
-//			element.findElement(By.xpath(value));
-//			element.findElement(By.linkText(value));
+			//			element.findElement(By.className(value));
+			//			element.findElement(By.id(value));
+			//			element.findElement(By.xpath(value));
+			//			element.findElement(By.linkText(value));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
-public static void keyComm(WebElement element , Keys keys) {
-   try {
-	keyComm(element,Keys.LEFT_SHIFT );
-} catch (Exception e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}	
-}
-public static void selectInd(WebElement element, int i) {
-	try {
-		Select sc = new Select(element);
-		sc.selectByIndex(i);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	public static void keyComm(WebElement element , Keys keys) {
+		try {
+			keyComm(element,Keys.LEFT_SHIFT );
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
-}
-public static void selectValue(WebElement element,String value) {
-	try {
-		Select sc = new Select(element);
-		sc.selectByValue(value);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}	
-}
-public static void selectVisi(WebElement element,String value) {
-	try {
-		Select sc = new Select(element);
-		sc.selectByVisibleText(value);
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	public static void selectInd(WebElement element, int i) {
+		try {
+			Select sc = new Select(element);
+			sc.selectByIndex(i);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-}
-public static void screenS(WebElement element) {
+	public static void selectValue(WebElement element,String value) {
+		try {
+			Select sc = new Select(element);
+			sc.selectByValue(value);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	public static void selectVisi(WebElement element,String value) {
+		try {
+			Select sc = new Select(element);
+			sc.selectByVisibleText(value);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static void screenS() {
 
-	try {
-		TakesScreenshot screenShot = (TakesScreenshot) driver;
-		File srcFile = screenShot.getScreenshotAs(OutputType.FILE);
-		File desFile = new File("/Users/srilakshmi/eclipse-workspace/CucumberFramwork/ScreenShots//adactinbookingConfirmation.png");
-		FileUtils.copyFile(srcFile, desFile);
-	} catch (WebDriverException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+		try {
+			TakesScreenshot screenShot = (TakesScreenshot) driver;
+			File srcFile = screenShot.getScreenshotAs(OutputType.FILE);
+			File desFile = new File("/Users/srilakshmi/eclipse-workspace/CucumberFramwork/ScreenShots//Positive_Cases_OrHRM.png");
+			FileUtils.copyFile(srcFile, desFile);
+		} catch (WebDriverException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-}
+	}
 
 }
