@@ -202,12 +202,10 @@ public class Cucumber_Base {
 	public static void actionClass(WebElement element) {
 		try {
 			Actions builder = new Actions(driver);
-			builder.click().perform();
-			builder.contextClick().perform();
+//			builder.click().perform();
+//			builder.contextClick().perform();
 			builder.moveToElement(element).perform();
-			builder.contextClick(element).perform();
-			builder.dragAndDrop(element, element).perform();
-			builder.sendKeys(element, "value").perform();
+			//builder.sendKeys(element, "value").perform();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -442,7 +440,7 @@ public class Cucumber_Base {
 		try {
 			TakesScreenshot screenShot = (TakesScreenshot) driver;
 			File srcFile = screenShot.getScreenshotAs(OutputType.FILE);
-			File desFile = new File("/Users/srilakshmi/eclipse-workspace/CucumberFramwork/ScreenShots//Positive_Cases_OrHRM.png");
+			File desFile = new File("/Users/srilakshmi/eclipse-workspace/Cucumber.fram/target//.png");
 			FileUtils.copyFile(srcFile, desFile);
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
@@ -452,6 +450,15 @@ public class Cucumber_Base {
 			e.printStackTrace();
 		}
 
+	}
+	public static void getText(WebElement element) {
+		try {
+		String text=element.getText();
+		System.out.println(text);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

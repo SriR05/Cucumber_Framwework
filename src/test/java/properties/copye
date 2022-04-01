@@ -11,4 +11,162 @@
 		prop = new Properties();
 		prop.load(inputFile);
 	}
+	
+	 @tag5
+  Scenario: Fullname feature without entering the fields
+    When Fullname fields are not entered with <firstname><middlename><lastname>
+    Then Validate the popup error message displays under <firstname> and <lastname> fields
+	 @tag7
+  Scenario: Email id in Email feature without '@'symbol
+    When Clicks on Email field
+    And Enters email field with <emailid> without '@' symbol
+    Then Validate the popup error message displays under <emailid> field
+
+  @tag8
+  Scenario: Email feature without entering the field
+    When Email field is not entered with <emailid>
+    Then Validate the popup error message displays under <emailid> field
+
+  @tag9
+  Scenario: Email id in Email feature without domian
+    When Enters email field with <emailid>  without domain
+    Then Validate the popup error message displays under <emailid> field
+
+  @tag10
+  Scenario: Email id in Email feature without symbol
+    When Clicks on Email field
+    And Enters email field with <emailid> without . symbol
+    Then Validate the popup error message displays under <emailid> field
+
+  @tag11
+  Scenario: Email id in Email feature with Numeric domian
+    When Enters email field with <emailid>  with Numeric domain
+    Then Validate the popup error message displays under <emailid> field
+
+	@tag18
+  Scenario: Exceeding 250 words in Keywords feature
+    When Clicks on Keywords field
+    And enters keywords more than 250 words
+    Then Validate the popup error message displays under Keywords field
+    @tag16
+  Scenario: Select more than one job in Job Vacancy feature
+    When Clicks on Job Vacancy drop-down field
+    And selects more than one job position from the drop-down list
+    Then Validate is the Job Vacancy field is enabled to choose more than one job position
+
+     @tag13
+  Scenario: Contact No feature entered with Alphabates
+    When Clicks on Contact No field
+    And enters alphabets as <contactno>
+    Then Validate the popup error message displays under <contactno> field
+
+  @tag14
+  Scenario: Contact No feature entered with more than 30 digits
+    When Clicks on Contact No field
+    And enters more than 30 digit numbers as <contactno>
+    Then Validate the popup error message displays under <contactno> field
+
+    
+  @tag20
+  Scenario: Exceeding 250 words in Comment feature
+    When Clicks on Comment field
+    And enters comments more than 250 words
+    Then Validate the popup error message displays under Comment field
+
+    
+  @tag22
+  Scenario: Invalid entry in Date of Application feature
+    When Clicks on Date of Application field
+    And selects invalid <date> <month> and <year> from the calender icon
+    Then Validate the popup error message displays under Date of Application field
+
+  @tag23
+  Scenario: Current date entry in Date of Application feature
+    When Clicks on Date of Application field
+    And selects current <date> <month> and <year> from the calender icon
+    Then Validate the popup error message displays under Date of Application field
+
+    
+		getBrowser("chrome");getUrl("https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers");
+driver.manage().window().maximize();driver.manage().timeouts().
+implicitlyWait(Duration.ofSeconds(30));
+
+@FindBy(xpath="//div//input/following::span[contains(text(),'Password')][2]")
+private WebElement passWord;
+@FindBy(xpath="//div//*[@id='btnLogin']")
+private WebElement loginBtn;
+
+public OrLogin(WebDriver driver1) {
+	this.driver = driver1;
+	PageFactory.initElements(driver1, this);
+	
+	public static WebDriver driver;
+	@FindBy(xpath="//*//input[contains(@id,'firstName')]")
+	private WebElement firstName;
+	@FindBy(xpath="//*//input[contains(@id,'middleName')]")
+	private WebElement middleName;
+	@FindBy(xpath="//*//input[contains(@id,'lastName')]")
+	private WebElement lastName;
+	@FindBy(name="addCandidate[email]")
+	private WebElement emailID;
+	@FindBy(id="addCandidate_contactNo")
+	private WebElement contactNo;
+	@FindBy(className="vacancyDrp")
+	private WebElement jobVacancy;
+	@FindBy(xpath="//*//input[contains(@id,'keyWords')]")
+	private WebElement keyWords;
+	@FindBy(id="addCandidate_comment")
+	private WebElement commenBox;
+	@FindBy(xpath="//input[@id='addCandidate_appliedDate']")
+	private WebElement dOA;
+	@FindBy(xpath="//input[starts-with(@id,'addCandidate_conse')]")
+	private WebElement consentBox;
+	@FindBy(id="btnSave")
+	private WebElement saveBtn;
+	@FindBy(id="btnBack")
+	private WebElement backBtn;
+	public WebElement getBackBtn() {
+		return backBtn;
+	}
+	public Orange_Add_Candidate(WebDriver driver4) {
+		this.driver = driver4;
+		PageFactory.initElements(driver4, this);
 		
+	public static WebDriver driver;
+	@FindBy(id="btnAdd")
+	public Orange_Candiates_Functionality(WebDriver driver3) {
+		this.driver = driver3;
+		PageFactory.initElements(driver3, this);
+	
+	public static WebDriver driver;
+	@FindBy(id="ohrmList_chkSelectRecord_24_1")
+	private WebElement selectBox;
+	@FindBy(id="btnDelete")
+	@FindBy(linkText="Hiring Manager")
+	private WebElement sortOrder;
+	public Orange_Delete_SortOrder(WebDriver driver5) {
+		this.driver = driver5;
+		PageFactory.initElements(driver5, this);
+	
+	public static WebDriver driver;
+	@FindBy(xpath="//a//b[contains(text(),'Recruitment')]")
+	public Orange_Recruitment_Functionality(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver2, this);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
